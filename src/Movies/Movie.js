@@ -9,7 +9,6 @@ export default function Movie(props) {
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
 
   useEffect(() => {
-    const getMovie = () => {
       axios
         .get(`http://localhost:5001/api/movies/${id}`) // Study this endpoint with Postman
         .then(response => {
@@ -20,8 +19,7 @@ export default function Movie(props) {
         .catch(error => {
           console.error(error);
         });
-    }
-    getMovie()
+    
     // This effect should run every time time
     // the `id` changes... How could we do this?
   }, [id]);
